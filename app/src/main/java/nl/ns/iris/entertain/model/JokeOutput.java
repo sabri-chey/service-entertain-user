@@ -1,6 +1,5 @@
 package nl.ns.iris.entertain.model;
 
-
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;

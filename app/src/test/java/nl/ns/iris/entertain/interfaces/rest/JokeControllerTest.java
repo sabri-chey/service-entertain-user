@@ -16,7 +16,6 @@ import java.io.IOException;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.hamcrest.Matchers.equalTo;
 
 @ExtendWith(MockitoExtension.class)
 class JokeControllerTest {

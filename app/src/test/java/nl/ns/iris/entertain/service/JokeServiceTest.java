@@ -52,7 +52,7 @@ class JokeServiceTest {
     void shouldReturnEmptyIfNothingFounded()  {
         when(externalJokeClient.fetchExternalJoke()).thenReturn(null);
         Optional<JokeOutput> result = jokeService.getRandomJokes();
-        assertThat(result.isEmpty());
+        assertThat(result.isEmpty()).isTrue();
         verify(jokeMapper, times(0)).map(any(Joke.class));
     }
    

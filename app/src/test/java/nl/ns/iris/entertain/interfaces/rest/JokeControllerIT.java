@@ -8,7 +8,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.hasSize;
 
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -25,11 +24,10 @@ public class JokeControllerIT {
 
     @Test
     void shouldReturn404WhenNoJokesFount() {
-        
         given()
                 .contentType(ContentType.JSON)
                 .when()
-                .get("/v1/entertain/getJoke")
+                .get("/jokes")
                 .then()
                 .statusCode(404);
 
