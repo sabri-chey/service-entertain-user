@@ -1,0 +1,102 @@
+{
+  "error": false,
+  "amount": 10,
+  "jokes": [
+    {
+      "category": "Explicit",
+      "type": "single",
+      "joke": "Explicit joke!",
+      "flags": {
+        "nsfw": false,
+        "religious": false,
+        "political": false,
+        "racist": false,
+        "sexist": false,
+        "explicit": true
+      },
+      "safe": true,
+      "id": 307,
+      "lang": "en"
+    },
+    {
+      "category": "Unsave",
+      "type": "single",
+      "joke": "Unsafe joke!",
+      "flags": {
+        "nsfw": false,
+        "religious": false,
+        "political": false,
+        "racist": false,
+        "sexist": false,
+        "explicit": false
+      },
+      "id": 37,
+      "safe": false,
+      "lang": "en"
+    },
+    {
+      "category": "Dark",
+      "type": "single",
+      "joke": "Racist Joke!.",
+      "flags": {
+        "nsfw": false,
+        "religious": false,
+        "political": false,
+        "racist": true,
+        "sexist": false,
+        "explicit": false
+      },
+      "id": 207,
+      "safe": true,
+      "lang": "en"
+    },
+    {
+      "category": "Sexist",
+      "type": "single",
+      "joke": "Sexist joke!",
+      "flags": {
+        "nsfw": false,
+        "religious": false,
+        "political": false,
+        "racist": false,
+        "sexist": true,
+        "explicit": false
+      },
+      "id": 34,
+      "safe": true,
+      "lang": "en"
+    },
+    {
+      "category": "Short",
+      "type": "single",
+      "joke": "Short joke!",
+      "flags": {
+        "nsfw": false,
+        "religious": true,
+        "political": false,
+        "racist": false,
+        "sexist": false,
+        "explicit": false
+      },
+      "id": 203,
+      "safe": true,
+      "lang": "en"
+    },
+    {
+      "category": "Save",
+      "type": "single",
+      "joke": "Very very very long joke!.",
+      "flags": {
+        "nsfw": false,
+        "religious": false,
+        "political": false,
+        "racist": false,
+        "sexist": false,
+        "explicit": false
+      },
+      "id": 238,
+      "safe": true,
+      "lang": "en"
+    }
+  ]
+}
