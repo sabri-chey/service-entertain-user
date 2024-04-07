@@ -3,7 +3,7 @@
 Description
 This is a Java-based application that utilizes Spring-boot, Lombok, Java 17 and MapStruct. The main purpose of this application is to fetch random jokes from an external service, process the jokes, and provide an API for users to consume.
 
-**Features**
+**Features:**
 Fetches jokes from an external service.
 Filters and selects the most suitable joke based on predefined criteria.
 Provides a RESTful API for users to get a random joke.
@@ -20,17 +20,25 @@ This is a backend service designed to be used with an according front-end
 
 Here's the main endpoint available:
 
-GET /V1/entertain/getJoke
+    GET /V1/entertain/getJoke
 Use this endpoint to fetch a random joke from the external service.
 
 
 ## Setup
 
-Before running the application, make sure that Java JDK 17 is installed.
-To run the application, follow these steps:
-Clone this repository.
-Open the project in your favourite IDE on Intellij IDEA.
-Build and run the application.
+    Before running the application, make sure that Java JDK 17 is installed.
+    To run the application, follow these steps:
+    Clone this repository.
+    Open the project in your favourite IDE on Intellij IDEA.
+## Building and running the application.
+
+### build docker image
+    docker build --tag=service-entertain-user:latest .
+
+### Run docker image
+    docker run -p 8080:8080 service-entertain-user
+
+
 
 
 
