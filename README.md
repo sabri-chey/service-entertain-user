@@ -10,7 +10,7 @@ Provides a RESTful API for users to get a random joke.
 
 
 ## Project Structure
-JokeMapper class: Handles the mapping between Joke and ResponseJoke objects.
+JokeMapper class: Handles the mapping between Joke and JokeOutput objects.
 ExternalJoke and JokeOutput classes: These are Lombok data classes that represent the internal and external representations of a joke.
 JokeService class: Fetches jokes from ExternalJokeRestClient, processes them and returns processed jokes.
 JokeController class: Handles HTTP requests and responses.
