@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: service-entertain-user
+
+service-entertain-user:
+  url:
+    external:
+      endpoint: "https://v2.jokeapi.dev/joke/Any?type=single&amount=16"

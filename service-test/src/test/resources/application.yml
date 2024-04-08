@@ -1,0 +1,11 @@
+server:
+  port: ${SERVER_PORT:8082}
+spring:
+  docker:
+    compose:
+      skip:
+        in-tests: false
+service-entertain-user:
+  url:
+    external:
+      endpoint: "http://localhost:8080/jokes"
