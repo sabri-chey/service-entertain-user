@@ -42,11 +42,6 @@ class JokeServiceTest {
         verify(externalJokeClient).fetchExternalJoke();
         verify(jokeMapper, times(1)).map(any(Joke.class));
     }
-    @Test
-    void shouldNotReturnUnsafeJoke(){
-        ExternalJoke externalJokeWithSixJokes = TestDataFactory.createExternalJoke();
-        
-    }
 
     @Test
     void shouldReturnEmptyIfNothingFounded()  {

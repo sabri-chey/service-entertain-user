@@ -1,8 +1,7 @@
 package nl.ns.iris.entertain.interfaces.rest;
 
-import nl.ns.iris.entertain.service.JokeService;
-import nl.ns.iris.entertain.mapper.JokeMapper;
 import nl.ns.iris.entertain.model.JokeOutput;
+import nl.ns.iris.entertain.service.JokeService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -22,9 +21,6 @@ class JokeControllerTest {
 
     @Mock
     JokeService jokeService;
-    
-    @Mock
-    JokeMapper jokeMapper;
 
     @InjectMocks
     JokeController jokeController;

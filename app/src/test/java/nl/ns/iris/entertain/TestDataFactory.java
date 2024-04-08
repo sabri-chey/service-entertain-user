@@ -9,14 +9,7 @@ import java.util.List;
 
 public class TestDataFactory {
 
-    public static ExternalJoke createExternalJoke(int amount,boolean error, List<Joke> jokes ) {
-        return ExternalJoke.builder()
-                .jokes(jokes)
-                .amount(amount)
-                .error(error)
-                .build();
-    }
-    
+
     public static ExternalJoke createExternalJoke() {
         return ExternalJoke.builder()
                 .jokes(createJokes())

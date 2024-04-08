@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.IOException;
 import java.util.Optional;
 
 @RestController
@@ -23,7 +22,7 @@ public class JokeController {
     }
 
     @GetMapping("/getJoke")
-    public ResponseEntity<JokeOutput> getJoke() throws IOException {
+    public ResponseEntity<JokeOutput> getJoke() {
 
         log.info("Got request for joke");
         Optional<JokeOutput> randomJokes = jokeService.getRandomJokes();

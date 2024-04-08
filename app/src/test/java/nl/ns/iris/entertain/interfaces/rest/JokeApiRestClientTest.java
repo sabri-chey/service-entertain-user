@@ -35,7 +35,7 @@ class JokeApiRestClientTest {
 
 
     @Test
-    void shouldHandleError() throws IOException {
+    void shouldHandleError() {
 
         server.expect(MockRestRequestMatchers.requestTo("http://localhost:8080/jokes"))
                 .andRespond(MockRestResponseCreators.withServerError());
