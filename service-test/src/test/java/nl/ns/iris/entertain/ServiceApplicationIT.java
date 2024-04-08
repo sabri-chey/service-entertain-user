@@ -42,7 +42,6 @@ public class ServiceApplicationIT {
     final GenericContainer<?> wiremock = new GenericContainer<>(DockerImageName.parse("wiremock/wiremock:2.31.0"))
             .withNetworkAliases("wiremock")
             .withNetwork(network)
-            .withFileSystemBind("../wiremock/input", "/home/wiremock/mappings")
             .waitingFor(Wait.forHttp("/__admin/docs/")
                     .withStartupTimeout(Duration.ofMinutes(5)));
 
@@ -50,7 +49,6 @@ public class ServiceApplicationIT {
     final GenericContainer<?> app = new GenericContainer<>(appImage)
             .dependsOn(wiremock)
             .withNetwork(network)
-
             .withNetworkAliases("app")
             .withExposedPorts(APP_INTERNAL_PORT)
             .waitingFor(Wait.forLogMessage(".*Tomcat started on port.*", 1));

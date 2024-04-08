@@ -50,7 +50,7 @@ class JokeApiRestClientTest {
     }
 
     private String readTestData() throws IOException {
-        return new String(getClass().getClassLoader().getResourceAsStream("request_message.json").readAllBytes());
+            return new String(getClass().getClassLoader().getResourceAsStream("request_message.json").readAllBytes());
     }
 
 }

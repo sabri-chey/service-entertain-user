@@ -11,7 +11,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import java.io.IOException;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -26,7 +25,7 @@ class JokeControllerTest {
     JokeController jokeController;
 
     @Test
-    void shouldGetJoke() throws IOException {
+    void shouldGetJoke()  {
         JokeOutput joke =  JokeOutput.builder()
                 .id(1L)
                 .randomJoke("someRandom Joke")
@@ -42,7 +41,7 @@ class JokeControllerTest {
     }
 
     @Test
-    void shouldHandleEmptyResults() throws IOException {
+    void shouldHandleEmptyResults() {
         Mockito.when(jokeService.getRandomJokes()).thenReturn(Optional.empty());
         ResponseEntity<JokeOutput> result = jokeController.getJoke();
         assertThat(result).isNotNull();
