@@ -25,9 +25,13 @@ import static org.springframework.http.MediaType.APPLICATION_JSON;
 @DisplayName("ServiceApplicationIT")
 @Profile("test")
 public class ServiceApplicationIT {
-
     static final int APP_INTERNAL_PORT = 8080;
     final Network network = Network.newNetwork();
+    private static final String WIREMOCK_IMAGE = "wiremock/wiremock:2.31.0";
+    private static final String WIREMOCK_ALIAS = "wiremock";
+    private static final String ADMIN_DOCS_ENDPOINT = "/__admin/docs/";
+    private static final int STARTUP_TIMEOUT_MINUTES = 5;
+
     static final Future<String> appImage;
 
     static {
@@ -39,16 +43,17 @@ public class ServiceApplicationIT {
     }
 
     @Container
-    final GenericContainer<?> wiremock = new GenericContainer<>(DockerImageName.parse("wiremock/wiremock:2.31.0"))
-            .withNetworkAliases("wiremock")
+    final GenericContainer<?> wiremock = new GenericContainer<>(DockerImageName.parse(WIREMOCK_IMAGE))
+            .withNetworkAliases(WIREMOCK_ALIAS)
             .withNetwork(network)
-            .waitingFor(Wait.forHttp("/__admin/docs/")
-                    .withStartupTimeout(Duration.ofMinutes(5)));
+            .waitingFor(Wait.forHttp(ADMIN_DOCS_ENDPOINT)
+                    .withStartupTimeout(Duration.ofMinutes(STARTUP_TIMEOUT_MINUTES)));
 
     @Container
     final GenericContainer<?> app = new GenericContainer<>(appImage)
             .dependsOn(wiremock)
             .withNetwork(network)
+
             .withNetworkAliases("app")
             .withExposedPorts(APP_INTERNAL_PORT)
             .waitingFor(Wait.forLogMessage(".*Tomcat started on port.*", 1));
